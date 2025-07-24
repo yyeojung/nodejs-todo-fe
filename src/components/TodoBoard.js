@@ -1,6 +1,6 @@
-import React from "react";
+import TodoItem from "./TodoItem";
 
-const TodoBoard = () => {
+const TodoBoard = ({ todoList }) => {
   return (
     <div>
       <h2>Todo List</h2>

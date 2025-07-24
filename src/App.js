@@ -6,7 +6,7 @@ import TodoBoard from "./components/TodoBoard";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import api from "./utils/api";
 
 function App() {
@@ -58,7 +58,7 @@ function App() {
         </Col>
       </Row>
 
-      <TodoBoard />
+      <TodoBoard todoList={todoList} />
     </Container>
   );
 }
