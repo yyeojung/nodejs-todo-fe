@@ -36,6 +36,36 @@ function App() {
     }
   };
 
+  const updateTask = async (id, isComplete) => {
+    try {
+      const response = await api.put(`/tasks/${id}`, {
+        isComplete: !isComplete,
+      });
+      if (response.status === 200) {
+        console.log("수정성공");
+        getTasks();
+      } else {
+        throw new Error("task can not be added");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const deleteTask = async (id) => {
+    try {
+      const response = await api.delete(`/tasks/${id}`);
+      if (response.status === 200) {
+        console.log("삭제성공");
+        getTasks();
+      } else {
+        throw new Error("task can not be added");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   useEffect(() => {
     getTasks();
   }, []);
@@ -58,7 +88,11 @@ function App() {
         </Col>
       </Row>
 
-      <TodoBoard todoList={todoList} />
+      <TodoBoard
+        todoList={todoList}
+        onCompleteClick={updateTask}
+        onDeleteClick={deleteTask}
+      />
     </Container>
   );
 }
