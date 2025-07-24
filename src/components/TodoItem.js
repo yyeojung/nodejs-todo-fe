@@ -1,6 +1,6 @@
 import { Col, Row } from "react-bootstrap";
 
-const TodoItem = ({ text }) => {
+const TodoItem = ({ text, isComplete, onCompleteClick, onDeleteClick }) => {
   return (
     <Row>
       <Col xs={12}>
@@ -8,8 +8,15 @@ const TodoItem = ({ text }) => {
           <div className="todo-content">{text}</div>
 
           <div>
-            <button className="button-delete">삭제</button>
-            <button className="button-delete">끝남</button>
+            <button className="button-delete" onClick={onDeleteClick}>
+              삭제
+            </button>
+            <button
+              className={`button-delete ${isComplete && "end"}`}
+              onClick={onCompleteClick}
+            >
+              {isComplete ? "끝남" : "안끝남"}
+            </button>
           </div>
         </div>
       </Col>
