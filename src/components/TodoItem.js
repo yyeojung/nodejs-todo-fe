@@ -1,12 +1,12 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
 
-const TodoItem = () => {
+const TodoItem = ({ text }) => {
   return (
     <Row>
       <Col xs={12}>
         <div className={`todo-item`}>
-          <div className="todo-content">밥먹기</div>
+          <div className="todo-content">{text}</div>
 
           <div>
             <button className="button-delete">삭제</button>
