@@ -18,7 +18,7 @@ const LoginPage = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await api.post("/user/login", { email, password });
+      const response = await api.post("/users/login", { email, password });
 
       if (response.status === 200) {
         setUser(response.data.user);

@@ -26,7 +26,7 @@ const RegisterPage = () => {
       if (password !== secPassword)
         throw new Error("비밀번호가 일치하지 않습니다.");
 
-      const response = await api.post("/user", { name, email, password });
+      const response = await api.post("/users", { name, email, password });
       if (response.status === 200) {
         navigate("/login");
       } else {
