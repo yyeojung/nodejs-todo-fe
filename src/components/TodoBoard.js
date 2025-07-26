@@ -1,22 +1,18 @@
 import TodoItem from "./TodoItem";
 
-const TodoBoard = ({ todoList, onCompleteClick, onDeleteClick }) => {
+const TodoBoard = ({ todoList, deleteItem, toggleComplete }) => {
   return (
     <div>
       <h2>Todo List</h2>
-      {todoList.length > 0 ? (
-        todoList.map((item) => (
+      {todoList.length > 0 &&
+        todoList.map((item, index) => (
           <TodoItem
-            key={item._id}
-            text={item.task}
-            isComplete={item.isComplete}
-            onCompleteClick={() => onCompleteClick(item._id, item.isComplete)}
-            onDeleteClick={() => onDeleteClick(item._id)}
+            item={item}
+            key={index}
+            deleteItem={deleteItem}
+            toggleComplete={toggleComplete}
           />
-        ))
-      ) : (
-        <h2>There is no Item to show</h2>
-      )}
+        ))}
     </div>
   );
 };
