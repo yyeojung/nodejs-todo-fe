@@ -49,7 +49,6 @@ button{
   background-color: white;
   border: 2px solid lightblue;
   color: lightblue;
-  margin: 10px;
 }
 .button-delete:hover,
 .button-delete.end{
@@ -122,4 +121,30 @@ button{
   60% { transform: translateX(-5px); }
   80% { transform: translateX(5px); }
   100% { transform: translateX(0); }
+}
+
+.todo-info {
+  display: flex;
+  align-items: center;
+  gap:10px;
+  margin-right: 20px;
+}
+.todo-info .author {
+  min-width: 100px;
+}
+.todo-btn {
+  display: flex;
+  min-width: 120px;
+  gap:10px;
+}
+.header {
+  height: 60px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  padding: 0 20px;
+}
+.header .logout {
+  width: 120px;
+  height: 40px
 }
